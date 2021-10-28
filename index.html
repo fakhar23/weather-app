@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="helpers.js"></script>
+    <script defer src="app.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,500&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="main-sidebar">
+      <div>account option go here</div>
+    </div>
+    <main>
+      <section class="section-1">
+        <div class="dates">
+          <div class="date-1">January 2022</div>
+          <div class="date-2">Thursday, Jan 4, 2022</div>
+        </div>
+        <form class="location-search-box">
+          <!-- <button type="submit"></button> -->
+          <input
+            type="text"
+            placeholder=" Search location here"
+            class="Input-form"
+          />
+        </form>
+      </section>
+
+      <section class="section-overview">
+        <h2>Today overview</h2>
+        <div class="main-cards hidden">
+          <div class="card card1">
+            <div>
+              <img
+                src="https://img.icons8.com/color/512/wind.png"
+                class="card-icon"
+              />
+            </div>
+            <div class="card-text">
+              <div class="card-text-title">Wind Speed</div>
+              <div class="card-text-number">
+                <div class="card-text-1 api-wind-speed">....</div>
+                <div class="card-text-2">
+                  <img class="red-triangle" src="red-triangle.png" />2Km/h
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card2">
+            <div>
+              <img
+                class="card-icon"
+                src="https://thumbs.dreamstime.com/b/rain-icon-trendy-flat-style-isolated-background-cloud-rain-symbol-your-web-site-design-logo-app-ui-modern-forecast-storm-247341164.jpg"
+              />
+            </div>
+            <div class="card-text">
+              <div class="card-text-title">Humidity</div>
+              <div class="card-text-number">
+                <div class="card-text-1 api-humidiy">....</div>
+                <div class="card-text-2">
+                  <img class="red-triangle" src="red-triangle.png" />2Km/h
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card3">
+            <div>
+              <img
+                class="card-icon"
+                src="https://cdn3.iconfinder.com/data/icons/nature-agriculture-ecology-and-energy/100/1-512.png"
+              />
+            </div>
+            <div class="card-text">
+              <div class="card-text-title">Pressure</div>
+              <div class="card-text-number">
+                <div class="card-text-1 api-pressure">....</div>
+                <div class="card-text-2">
+                  <img class="red-triangle" src="red-triangle.png" />2Km/h
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card card4">
+            <div>
+              <img
+                class="card-icon"
+                src="https://icones.pro/wp-content/uploads/2021/04/symbole-du-soleil-bleu.png"
+              />
+            </div>
+            <div class="card-text">
+              <div class="card-text-title">Visibility</div>
+              <div class="card-text-number">
+                <div class="card-text-1 api-visibility">....</div>
+                <div class="card-text-2">
+                  <img class="red-triangle" src="red-triangle.png" />2Km/h
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section class="section-sidebar">
+      <div class="gif-div">
+        <div class="gif-row-1">
+          <div class="location-name">
+            <h3 class="location api-city">Mejasem Barat</h3>
+            <div class="city api-country">ID</div>
+          </div>
+          <div class="time">8:59am</div>
+        </div>
+        <div class="gif-row-2">
+          <div class="temperature api-temperature hidden">20 C</div>
+          <div class="cloudy api-condition hidden">Dramatic cloudy</div>
+        </div>
+      </div>
+      <div class="sunrise-set">
+        <h3>Sunrise & Sunset</h3>
+        <div class="sun-card sun-rise hidden2">
+          <div class="div1">
+            <img
+              class="sun-rise-icon"
+              src="https://cdn-icons-png.flaticon.com/512/6991/6991341.png"
+            />
+            <div class="sun-rise-text">
+              <div>Sunrise</div>
+              <div class="sunrise-time api-sunrise">4:20</div>
+            </div>
+          </div>
+          <div class="sunrise-ago">4 hours ago</div>
+        </div>
+        <div class="sun-card sun-set hidden2">
+          <div class="div1">
+            <img class="sun-rise-icon" src="sun-3-128 (1).png" />
+            <div class="sun-rise-text">
+              <div>Sunrise</div>
+              <div class="sunrise-time api-sunset">4:20</div>
+            </div>
+          </div>
+          <div class="sunrise-ago">4 hours ago</div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

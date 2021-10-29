@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather App Netlify</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="helpers.js"></script>
     <script defer src="app.js"></script>
@@ -22,6 +22,11 @@
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+    <!-- <script
+      defer
+      src="https://canvasjs.com/assets/script/canvasjs.min.js"
+    ></script> -->
+    <script defer src="canvas.js"></script>
   </head>
   <body>
     <div class="main-sidebar">
@@ -114,6 +119,27 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="forecast-graph">
+          <h2>Forecast</h2>
+          <div
+            id="chartContainer"
+            style="
+              height: 370px;
+              width: 100%;
+              background-image: linear-gradient(
+                rgba(70, 70, 175, 0.568),
+                rgba(60, 60, 80, 0.788)
+              );
+              padding: 10px;
+              border-radius: 5px;
+              color: white;
+              stroke: white;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            "
+          ></div>
+          <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         </div>
       </section>
     </main>

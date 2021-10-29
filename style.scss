@@ -261,3 +261,18 @@ h2 {
 .sun-rise-icon {
   color: white;
 }
+
+// ****************
+.chartContainer {
+  background-image: linear-gradient(
+    rgba(70, 70, 175, 0.788),
+    rgba(60, 60, 80, 0.788)
+  ) !important;
+}
+.canvasjs-chart-credit {
+  opacity: 0;
+}
+.forecast-graph {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

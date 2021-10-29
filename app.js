@@ -28,6 +28,12 @@ async function functionApiCall(city) {
 }
 function fromSubmit(e) {
   e.preventDefault();
+  document.querySelectorAll(".hidden").forEach((elem) => {
+    elem.classList.remove("active");
+  });
+  document.querySelectorAll(".hidden2").forEach((elem) => {
+    elem.classList.remove("active");
+  });
   functionApiCall(inputFormEl.value);
 }
 document.querySelector(".main-sidebar");

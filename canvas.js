@@ -1,4 +1,6 @@
 window.onload = function () {
+  let now = new Date();
+
   const chart = new CanvasJS.Chart("chartContainer", {
     theme: "light2", // "light2", "dark1", "dark2"
     animationEnabled: true, // change to true
@@ -10,14 +12,38 @@ window.onload = function () {
         // Change type to "bar", "area", "spline", "pie",etc.
         type: "spline",
         dataPoints: [
-          { label: "apple", y: 10 },
-          { label: "orange", y: 15 },
-          { label: "banana", y: 25 },
-          { label: "mango", y: 30 },
-          { label: "grape", y: 28 },
+          { label: `${now.getDate()}/ ${now.getMonth() + 1}`, y: 10 },
+          {
+            label: `${dayadder() ? now.getDate() : now.getDate()}/ ${
+              now.getMonth() + 1
+            }`,
+            y: 15,
+          },
+          {
+            label: `${dayadder() ? now.getDate() : now.getDate()}/ ${
+              now.getMonth() + 1
+            }`,
+            y: 25,
+          },
+          {
+            label: `${dayadder() ? now.getDate() : now.getDate()}/ ${
+              now.getMonth() + 1
+            }`,
+            y: 30,
+          },
+          {
+            label: `${dayadder() ? now.getDate() : now.getDate()}/ ${
+              now.getMonth() + 1
+            }`,
+            y: 28,
+          },
         ],
       },
     ],
   });
   chart.render();
+  function dayadder() {
+    now.setDate(now.getDate() + 1);
+    return 1;
+  }
 };

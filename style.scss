@@ -15,6 +15,7 @@ $dim-background: #fbfbfb;
 html,
 body {
   height: 100%;
+  font-size: 16px;
 }
 body {
   line-height: 1.5;
@@ -44,17 +45,20 @@ select {
 }
 .hidden {
   opacity: 0;
-  transition: 1s;
+  transition: 1s ease-in-out;
 }
 .hidden.active {
   opacity: 100;
 }
 .hidden2 {
   opacity: 0;
-  transition: 1s;
+  transition: 1s ease-in-out;
 }
 .hidden2.active {
   opacity: 100;
+}
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 /* ********************* */
@@ -88,6 +92,7 @@ main {
   justify-content: space-between;
   align-items: center;
   padding-bottom: 30px;
+  flex-direction: row;
 
   border-bottom: 1px solid #f3f3f3;
 }
@@ -146,7 +151,7 @@ h2 {
   color: $dim-text;
   font-weight: 500;
   justify-content: center;
-  height: 150px;
+  // height: 150px;
 
   padding: 15px 30px;
   border-radius: 10px;
@@ -275,4 +280,35 @@ h2 {
 .forecast-graph {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+// *********menu
+
+.ham-icon-and-dates {
+  // display: flex;
+  // align-items: center;
+  // gap: 1.6rem;
+}
+
+// menu
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  // display: none;
+  // position: absolute;
+  // left: -50px;
+  position: relative;
+  z-index: 999;
+}
+
+.icon-mobile-nav {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
 }

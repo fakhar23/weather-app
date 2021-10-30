@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App Netlify</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="queries.css" />
     <script defer src="helpers.js"></script>
     <script defer src="app.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,15 +29,22 @@
     ></script> -->
     <script defer src="canvas.js"></script>
   </head>
-  <body>
-    <div class="main-sidebar">
+  <body class="">
+    <div class="main-sidebar main-nav">
       <div>account option go here</div>
     </div>
     <main>
       <section class="section-1">
-        <div class="dates">
-          <div class="date-1">January 2022</div>
-          <div class="date-2">Thursday, Jan 4, 2022</div>
+        <div class="ham-icon-and-dates">
+          <button class="btn-mobile-nav">
+            <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+            <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+          </button>
+
+          <div class="dates">
+            <div class="date-1">January 2022</div>
+            <div class="date-2">Thursday, Jan 4, 2022</div>
+          </div>
         </div>
         <form class="location-search-box">
           <!-- <button type="submit"></button> -->
@@ -52,7 +60,7 @@
         <h2>Today overview</h2>
         <div class="main-cards hidden">
           <div class="card card1">
-            <div>
+            <div class="flex-shrink-0">
               <img
                 src="https://img.icons8.com/color/512/wind.png"
                 class="card-icon"
@@ -69,7 +77,7 @@
             </div>
           </div>
           <div class="card card2">
-            <div>
+            <div class="flex-shrink-0">
               <img
                 class="card-icon"
                 src="https://thumbs.dreamstime.com/b/rain-icon-trendy-flat-style-isolated-background-cloud-rain-symbol-your-web-site-design-logo-app-ui-modern-forecast-storm-247341164.jpg"
@@ -86,7 +94,7 @@
             </div>
           </div>
           <div class="card card3">
-            <div>
+            <div class="flex-shrink-0">
               <img
                 class="card-icon"
                 src="https://cdn3.iconfinder.com/data/icons/nature-agriculture-ecology-and-energy/100/1-512.png"
@@ -103,7 +111,7 @@
             </div>
           </div>
           <div class="card card4">
-            <div>
+            <div class="flex-shrink-0">
               <img
                 class="card-icon"
                 src="https://icones.pro/wp-content/uploads/2021/04/symbole-du-soleil-bleu.png"
@@ -189,8 +197,10 @@
         </div>
       </div>
     </section>
-    <div>
+    <!-- <div>
       <canvas id="myChart"></canvas>
-    </div>
+    </div> -->
   </body>
 </html>
+
+<!-- temp -->

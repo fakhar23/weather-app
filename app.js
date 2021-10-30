@@ -1,4 +1,11 @@
 "use strict";
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const bodyEl = document.querySelector("body");
+btnNavEl.addEventListener("click", (e) => {
+  console.log("mobile-button-pressed");
+  bodyEl.classList.toggle("nav-open");
+});
+
 // secting all important elements on the page
 const fromEl = document.querySelector(".location-search-box");
 const inputFormEl = document.querySelector(".Input-form");

@@ -42,7 +42,7 @@ function DisplayHoursAgo(milliSeconds) {
   }
   seconds = milliSeconds / 1000;
   minutes = seconds / 60;
-  hours = minutes / 60;
+  hours = Math.floor(minutes / 60);
 
   // console.log("milliSeconds: ", milliSeconds, seconds, minutes, hours);
   if (sign === -1)

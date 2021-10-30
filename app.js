@@ -1,5 +1,5 @@
 "use strict";
-
+// secting all important elements on the page
 const fromEl = document.querySelector(".location-search-box");
 const inputFormEl = document.querySelector(".Input-form");
 const apiWindSpeedEl = document.querySelector(".api-wind-speed");
@@ -12,20 +12,28 @@ const apiTemperatureEl = document.querySelector(".api-temperature");
 const apiSunriseEl = document.querySelector(".api-sunrise");
 const apiSunsetEl = document.querySelector(".api-sunset");
 const apiWeatherConditionEl = document.querySelector(".api-condition");
+const timeEl = document.querySelector(".time");
+const sunriseAgoEl = document.querySelector(".sunrise-ago");
+const sunsetAgoEl = document.querySelector(".sunset-ago");
 
-let weatherData, sunriseData;
+let weatherData,
+  sunriseData,
+  sunriseDate2,
+  sunsetDate2,
+  sunsetHoursAgo,
+  sunriseHoursAgo;
 
-async function functionApiCall(city) {
-  weatherData = await getWeatherJSON(city);
-  console.log(weatherData);
-  renderWeatherData();
-  sunriseData = await getSunRiseJson(
-    weatherData.coord.lat,
-    weatherData.coord.long
-  );
-  console.log(sunriseData);
-  renderSunRise();
-}
+// window load function
+window.addEventListener("load", (event) => {
+  // inputFormEl.value = "Mejasem Barat Indonesia";
+  // functionApiCall("Mejasem Barat");
+  inputFormEl.value = "Lahore Pakistan";
+  functionApiCall("Lahore");
+});
+
+// form submit
+fromEl.addEventListener("submit", fromSubmit);
+
 function fromSubmit(e) {
   e.preventDefault();
   document.querySelectorAll(".hidden").forEach((elem) => {
@@ -36,23 +44,33 @@ function fromSubmit(e) {
   });
   functionApiCall(inputFormEl.value);
 }
-document.querySelector(".main-sidebar");
 
-fromEl.addEventListener("submit", fromSubmit);
+// getting data form both API's and calling the render methods
+async function functionApiCall(city) {
+  weatherData = await getWeatherJSON(city);
+  console.log(weatherData);
+  renderWeatherData();
+  // await setTimeout(() => 500);
+  renderSunRise();
+}
 
-window.addEventListener("load", (event) => {
-  inputFormEl.value = "Mejasem Barat Indonesia";
-  functionApiCall("Mejasem Barat");
-});
-// window.onpaint;
+// renders sunRise
+function renderSunRise() {
+  document.querySelectorAll(".hidden2").forEach((elem) => {
+    elem.classList.add("active");
+  });
+  // apiSunriseEl.textContent = `${sunriseDate2.getHours()}:${sunriseDate2.getMinutes()}`;
+  // apiSunsetEl.textContent = `${sunsetDate2.getHours()}:${sunsetDate2.getMinutes()}`;
+  apiSunriseEl.textContent = `${sunriseDate2}`;
+  apiSunsetEl.textContent = `${sunsetDate2}`;
+}
 
+// renders weather data
 function renderWeatherData() {
   document.querySelectorAll(".hidden").forEach((elem) => {
     elem.classList.add("active");
   });
-  // inputFormEl.value = "";
   inputFormEl.blur();
-  // console.log(data);
   apiWindSpeedEl.textContent = `${weatherData.wind.speed} Km/h`;
   apiHumidityEl.textContent = `${weatherData.main.humidity} %`;
   apiPressureEl.textContent = `${weatherData.main.pressure} kPa `;
@@ -61,11 +79,20 @@ function renderWeatherData() {
   apiCountryAPI.textContent = `${weatherData.sys.country}`;
   apiTemperatureEl.textContent = `${Math.round(weatherData.main.temp)} C`;
   apiWeatherConditionEl.textContent = `${weatherData.weather[0].description}`;
-}
-function renderSunRise() {
-  document.querySelectorAll(".hidden2").forEach((elem) => {
-    elem.classList.add("active");
-  });
-  apiSunriseEl.textContent = sunriseData.results.sunrise;
-  apiSunsetEl.textContent = sunriseData.results.sunset;
+
+  // seting actual time
+  const currentTime = getOverSeasTime(new Date());
+  // console.log(currentTime);
+  // timeEl.textContent = `${currentTime.getHours()}:${currentTime.getMinutes()}`;
+  timeEl.textContent = currentTime;
+
+  // setting sunrise and sunsets time
+  sunriseDate2 = getOverSeasTime(new Date(weatherData.sys.sunrise * 1000));
+  sunsetDate2 = getOverSeasTime(new Date(weatherData.sys.sunset * 1000));
+
+  // setting setrise and sunset * hours ago
+  sunriseHoursAgo = new Date(weatherData.sys.sunrise * 1000) - new Date();
+  sunriseAgoEl.textContent = DisplayHoursAgo(sunriseHoursAgo);
+  sunsetHoursAgo = new Date(weatherData.sys.sunset * 1000) - new Date();
+  sunsetAgoEl.textContent = DisplayHoursAgo(sunsetHoursAgo);
 }

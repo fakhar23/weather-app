@@ -1,11 +1,23 @@
 @media (max-width: 69em) {
+  .btn-mobile-nav {
+    display: block;
+  }
+  .icon-mobile-nav[name=close-outline] {
+    display: none;
+  }
+  .nav-open .icon-mobile-nav[name=close-outline] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name=menu-outline] {
+    display: none;
+  }
   .main-nav {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     transform: translateX(-100%);
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in-out;
     /* Hide navigation */
     /* Allows NO transitions at all */
     /* display: none; */

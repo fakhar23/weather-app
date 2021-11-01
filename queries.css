@@ -2,13 +2,13 @@
   .btn-mobile-nav {
     display: block;
   }
-  .icon-mobile-nav[name=close-outline] {
+  .icon-mobile-nav[name="close-outline"] {
     display: none;
   }
-  .nav-open .icon-mobile-nav[name=close-outline] {
+  .nav-open .icon-mobile-nav[name="close-outline"] {
     display: block;
   }
-  .nav-open .icon-mobile-nav[name=menu-outline] {
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
     display: none;
   }
   .main-nav {
@@ -74,4 +74,7 @@
   .section-1 {
     justify-content: flex-start;
   }
-}/*# sourceMappingURL=queries.css.map */
+  .nav-open .main-nav {
+    width: 100%;
+  }
+} /*# sourceMappingURL=queries.css.map */
